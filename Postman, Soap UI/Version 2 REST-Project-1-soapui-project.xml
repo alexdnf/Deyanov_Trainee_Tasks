@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="36d8bf60-5b1b-4b5e-b51f-c63851053592" activeEnvironment="Default" name="REST Project 1" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="c83fae06-3df3-424b-8ed7-f250d6f5e0dc" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://reqres.in/api/" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://reqres.in</con:endpoint></con:endpoints><con:resource name="users" path="/user" id="c9acd356-5300-4afc-b4b4-f44390b79d2b"><con:settings/><con:parameters/><con:method name="List of users" id="6d38249c-398d-47ad-986c-40ff807885ae" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:user="https://reqres.in/users">user:Response</con:element></con:representation><con:request name="List Of Users" id="fb8d14d0-db2a-4d46-a1d8-fe1a7c4d3cbb" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://reqres.in/api</con:endpoint><con:request/><con:originalUri>https://reqres.in/users</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="21" path="/api/users/21" id="772f15f3-efbb-48ae-a44d-3e4d48fbb494"><con:settings/><con:parameters/><con:method name="Not Exist User" id="33ecab4f-e435-48ba-9a57-7e4392c872d2" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>Fault</con:element></con:representation><con:request name="Request 1" id="cadff5d9-6f06-4481-94d8-027d3211e17a" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://reqres.in</con:endpoint><con:request/><con:originalUri>https://reqres.in/api/users/21</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="register" path="/api/register" id="6cc2d31f-29c2-4f96-bbce-375bc52a20d8"><con:settings/><con:parameters/><con:method name="Register" id="f3d5e3d9-18f8-4cd1-a9a6-757c02e33069" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:reg="https://reqres.in/api/register">reg:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="9ad78e23-090d-4df6-865b-11504faf4aed" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://reqres.in</con:endpoint><con:request>{
+    "email": "eve.holt@reqres.in",
+    "password": "pistol"
+}</con:request><con:originalUri>https://reqres.in/api/register</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="login" path="/api/login" id="e709b9db-6b89-41d5-9030-0dd8a387e0b9"><con:settings/><con:parameters/><con:method name="Login" id="18cc68d7-c336-4f1e-a1f4-3b83a4b65dbe" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:log="https://reqres.in/api/login">log:Response</con:element></con:representation><con:request name="Request 1" id="e07a9198-54ab-4b32-a0c3-f314bb277ecc" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://reqres.in</con:endpoint><con:request>{
+    "email": "${#Project#user_email}",
+    "password": "${#Project#user_password}"
+}</con:request><con:originalUri>https://reqres.in/api/login</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="users" path="/api/users" id="411a6cbc-5bfb-4a68-9d84-fe242e70dd98"><con:settings/><con:parameters/><con:method name="Method 1" id="8fa06f87-3e28-44e3-9b1f-203b527d4239" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>201</con:status><con:params/><con:element xmlns:user="https://reqres.in/api/users">user:Response</con:element></con:representation><con:request name="Request 1" id="2bfe5c22-962a-49ad-9d7c-698e03d5dd4b" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://reqres.in</con:endpoint><con:request>{
+    "name": "${#Project#user_name}",
+    "job": "l${#Project#user_job}"
+}</con:request><con:originalUri>https://reqres.in/api/users</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="01244f76-75fb-4879-addb-4e5b0255aa7d" name="https://reqres.in/api/ TestSuite"><con:description>TestSuite generated for REST Service [https://reqres.in/api/]</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="25fa23c0-d9f9-4a54-949b-721b60300fb7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="users TestCase" searchProperties="true"><con:description>TestCase generated for REST Resource [users] located at [/user]</con:description><con:settings/><con:testStep type="restrequest" name="List Of Users" id="5df75dca-4837-4440-a700-3165b558ea5b"><con:settings/><con:config service="https://reqres.in/api/" resourcePath="/user" methodName="List of users" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="List Of Users" id="fb8d14d0-db2a-4d46-a1d8-fe1a7c4d3cbb" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://reqres.in/api</con:endpoint><con:request/><con:originalUri>https://reqres.in/users</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="30305927-f52a-49a9-a485-8d1a5ee6e1ab" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="a094c167-2f38-4cb6-abe7-e69a1ddf46bb" name="JsonPath Match"><con:configuration><path>$.total</path><content>12</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="4f6c0959-ede0-4abb-b510-b9e4451482fa" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="21 TestCase" searchProperties="true"><con:description>TestCase generated for REST Resource [21] located at [/api/users/21]</con:description><con:settings/><con:testStep type="restrequest" name="Request 1" id="c59cfbde-6960-4ffc-b197-a009e394b4bd"><con:settings/><con:config service="https://reqres.in/api/" resourcePath="/api/users/21" methodName="Not Exist User" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Request 1" id="cadff5d9-6f06-4481-94d8-027d3211e17a" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://reqres.in</con:endpoint><con:request/><con:originalUri>https://reqres.in/api/users/21</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="21939052-2502-4907-a43b-9f64521a9ffb" name="Valid HTTP Status Codes"><con:configuration><codes>404</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="6c1b0523-9abd-4873-abbe-b2588f900aa4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="register TestCase" searchProperties="true"><con:description>TestCase generated for REST Resource [register] located at [/api/register]</con:description><con:settings/><con:testStep type="restrequest" name="Request 1" id="f0680286-621a-4b55-af4c-6c299a4593a7"><con:settings/><con:config service="https://reqres.in/api/" resourcePath="/api/register" methodName="Register" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Request 1" id="9ad78e23-090d-4df6-865b-11504faf4aed" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://reqres.in</con:endpoint><con:request>{
+    "email": "eve.holt@reqres.in",
+    "password": "pistol"
+}</con:request><con:originalUri>https://reqres.in/api/register</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="ce33f2f7-bc51-40ed-972d-95ac40ecfd3b" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="595d9392-8194-4d27-a186-c431ee8226fd" name="JsonPath Match"><con:configuration><path>$.id</path><content>4</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="43165583-c674-4172-bf1f-c73145b01a35" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="login TestCase" searchProperties="true"><con:description>TestCase generated for REST Resource [login] located at [/api/login]</con:description><con:settings/><con:testStep type="restrequest" name="Request 1" id="b5a9d68d-8a3b-43a3-afb7-d8e2d3100ca5"><con:settings/><con:config service="https://reqres.in/api/" resourcePath="/api/login" methodName="Login" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Request 1" id="e07a9198-54ab-4b32-a0c3-f314bb277ecc" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://reqres.in</con:endpoint><con:request>{
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+}</con:request><con:originalUri>https://reqres.in/api/login</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="e5d7211f-184c-4c22-94f2-fd4cd076ff65" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="61705f33-acc2-46b8-9464-6f9a5f331bea" name="JsonPath Match"><con:configuration><path>$.token</path><content>QpwL5tke4Pnpja7X4</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="ac19c4bb-70ca-4195-af5a-7b5e4d0df1ae" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="users TestCase" searchProperties="true"><con:description>TestCase generated for REST Resource [users] located at [/api/users]</con:description><con:settings/><con:testStep type="restrequest" name="Request 1" id="8f5b0fb5-0b31-496b-9729-3bdfe08d06e4"><con:settings/><con:config service="https://reqres.in/api/" resourcePath="/api/users" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Request 1" id="2bfe5c22-962a-49ad-9d7c-698e03d5dd4b" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://reqres.in</con:endpoint><con:request>{
+    "name": "morpheus",
+    "job": "leader"
+}</con:request><con:originalUri>https://reqres.in/api/users</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="57ceb74f-d22a-41db-b58e-ebef8a29e1fa" name="Valid HTTP Status Codes"><con:configuration><codes>201</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="a0d267da-dc7f-4887-9568-405653814143" name="JsonPath Match"><con:configuration><path>$.name</path><content>morpheus</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:restMockService id="690ad00d-7e45-4dfa-9f3d-3694a3aeced6" port="8080" path="/" host="ALEX--ASUS-PC" name="REST MockService 1" docroot=""><con:settings/><con:properties/><con:restMockAction name="/get" method="GET" resourcePath="/get" id="0fa932b1-b5ee-4486-862e-c9ccf0152784"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="45e46c7b-a093-4eb0-91ec-18fbf5083616" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+	"value": "Hello, world"
+	}</con:responseContent><con:header><con:name>Content-type</con:name><con:value>application/json</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/users" method="POST" resourcePath="/users" id="0b6b9a9e-9d0b-4c09-b2e6-30a105be4d8b"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 2" id="86598488-52fc-4502-bff7-aba5034e1159" httpResponseStatus="201" mediaType="application/json"><con:settings/><con:responseContent>{
+	"id": "1"
+	"created": "done" 
+	}</con:responseContent><con:header><con:name>Content-type</con:name><con:value>application/json</con:value></con:header></con:response></con:restMockAction></con:restMockService><con:properties><con:property><con:name>user_email</con:name><con:value>eve.holt@reqres.in</con:value></con:property><con:property><con:name>user_password</con:name><con:value>cityslicka</con:value></con:property><con:property><con:name>user_name</con:name><con:value>morpheus</con:value></con:property><con:property><con:name>user_job</con:name><con:value>leader</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
